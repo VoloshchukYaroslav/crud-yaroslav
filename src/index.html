@@ -1,33 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CRUD</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css" integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
     <div class="container">
-        <button class="btn" type="button">Відкрити модалку</button>
-        <ul class="list"></ul>
-        <div class="backdrop">
-            <div class="modal">
-                <h2 class="caption">Додати/редагувати морозиво</h2>
-                <form class="form">
-                    <input name="name" class="input" type="text" placeholder="enter flavour">
-                    <input name="type" class="input" type="text" placeholder="enter Fruit">
-                    <input name="desk" class="input" type="text" placeholder="enter description">
-                    <input name="url" class="input" type="text" placeholder="enter image">
-                    <input name="price" class="input" type="text" placeholder="enter price">
-                    <button class="modal-btn" type="submit">Відправити</button>
-                </form>
-            </div>
+      <button class="btn" type="button">Відкрити модалку</button>
+      <ul class="list"></ul>
+      <div class="backdrop">
+        <div class="modal">
+          <h2 class="caption">Додати/редагувати морозиво</h2>
+          <form class="form">
+            <input
+              name="name"
+              class="input"
+              type="text"
+              placeholder="enter flavour"
+            />
+            <input
+              name="type"
+              class="input"
+              type="text"
+              placeholder="enter Fruit"
+            />
+            <input
+              name="desk"
+              class="input"
+              type="text"
+              placeholder="enter description"
+            />
+            <input
+              name="url"
+              class="input"
+              type="text"
+              placeholder="enter image"
+            />
+            <input
+              name="price"
+              class="input"
+              type="text"
+              placeholder="enter price"
+            />
+            <button class="modal-btn" type="submit">Відправити</button>
+          </form>
         </div>
+      </div>
     </div>
 
-   
-
     <script type="module" src="./app.js"></script>
-</body>
+  </body>
 </html>

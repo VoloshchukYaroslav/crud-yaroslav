@@ -67,10 +67,16 @@ listRef.addEventListener("click", (e) => {
   if (!action) {
     return;
   }
+  const li = e.target.closest("li");
+  const id = li.id;
   if (action === "delet") {
-    const li = e.target.closest("li");
-    console.log(li);
-
-    // delIce();
+    delIce(id)
+      .then(getIce)
+      .then((res) => creatIceMarcap(res));
+  }
+  if (action === "edit") {
+    openModal();
+    formRef.elements.name.value = li.querySelector("h2").textContent;
+    formRef.elements.type.value = li.querySelector("p").textContent;
   }
 });
