@@ -1,5 +1,6 @@
 import { getIce } from "./API/getice";
 import { postIce } from "./API/postice";
+import { delIce } from "./API/delice";
 const openBtn = document.querySelector(".btn");
 const listRef = document.querySelector(".list");
 const backdropRef = document.querySelector(".backdrop");
@@ -27,10 +28,10 @@ formRef.addEventListener("submit", (evt) => {
   const price = evt.currentTarget.elements.price.value;
 
   const iceData = {
-    name: name,
+    flavour: name,
     type: type,
-    desk: desk,
-    url: url,
+    description: desk,
+    image: url,
     price: price,
   };
 
@@ -53,8 +54,23 @@ function creatIceMarcap(arr) {
      <p class="text">${type}</p>
      <p class="desk">${description}</p>
     <p class="price">${price}</p>
+    <button data-action="edit" type="button">Edit</button>
+    <button data-action="delet" type="button">Delet</button>
    </li>`;
     })
     .join("");
   listRef.innerHTML = item;
 }
+
+listRef.addEventListener("click", (e) => {
+  const action = e.target.dataset.action;
+  if (!action) {
+    return;
+  }
+  if (action === "delet") {
+    const li = e.target.closest("li");
+    console.log(li);
+
+    // delIce();
+  }
+});
