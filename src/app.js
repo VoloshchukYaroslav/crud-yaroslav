@@ -1,10 +1,13 @@
 import { getIce } from "./API/getice";
 import { postIce } from "./API/postice";
 import { delIce } from "./API/delice";
+import { updateIce } from "./API/updateice";
 const openBtn = document.querySelector(".btn");
 const listRef = document.querySelector(".list");
 const backdropRef = document.querySelector(".backdrop");
 const formRef = document.querySelector(".form");
+
+let currentId = null;
 
 function openModal() {
   backdropRef.style.display = "flex";
@@ -34,11 +37,18 @@ formRef.addEventListener("submit", (evt) => {
     image: url,
     price: price,
   };
+  if (currentId === null) {
+    postIce(iceData)
+      .then(getIce)
+      .then((res) => creatIceMarcap(res));
 
-  postIce(iceData)
-    .then((res) => getIce(res))
+    evt.currentTarget.reset();
+    closeModal();
+    return;
+  }
+  updateIce(currentId, iceData)
+    .then(getIce)
     .then((res) => creatIceMarcap(res));
-
   evt.currentTarget.reset();
   closeModal();
 });
@@ -76,7 +86,12 @@ listRef.addEventListener("click", (e) => {
   }
   if (action === "edit") {
     openModal();
-    formRef.elements.name.value = li.querySelector("h2").textContent;
-    formRef.elements.type.value = li.querySelector("p").textContent;
+    currentId = id;
+    console.log(currentId);
+    formRef.elements.name.value = li.querySelector(".title").textContent;
+    formRef.elements.type.value = li.querySelector(".text").textContent;
+    formRef.elements.desk.value = li.querySelector(".desk").textContent;
+    formRef.elements.url.value = li.querySelector(".pic").src;
+    formRef.elements.price.value = li.querySelector(".price").textContent;
   }
 });

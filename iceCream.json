@@ -69,20 +69,12 @@
       "image": "https://www.yourhomebasedmom.com/wp-content/uploads/2013/07/lemon-ice-cream-4.jpg"
     },
     {
-      "flavour": "super Pistachio",
-      "type": "",
-      "description": "",
-      "image": "",
-      "price": "",
-      "id": "BQZFy4M"
-    },
-    {
-      "flavour": "super Pistachio",
-      "type": "Premium",
-      "description": "",
-      "image": "",
-      "price": "",
-      "id": "6FHeawK"
+      "flavour": "Watermelon",
+      "type": "Good taste",
+      "description": "Super peper cool",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCR2eBUKsjuLAl0oqz7YvkZJFU1C3znejG4g&s",
+      "price": "122",
+      "id": "AqLHDZr"
     }
   ]
 }
