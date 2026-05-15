@@ -3,17 +3,17 @@
     {
       "flavour": "Strawberry",
       "type": "Fruit",
-      "price": "0.8",
       "description": "Освіжаюче полуничне морозиво",
       "image": "https://www.elmundoeats.com/wp-content/uploads/2024/07/Strawberry-ice-cream-in-a-cone.jpg",
+      "price": "800",
       "id": "3"
     },
     {
       "flavour": "super Pistachio",
       "type": "Premium",
-      "price": "68",
       "description": "Вишукане фісташкове морозиво",
       "image": "https://tastesbetterfromscratch.com/wp-content/uploads/2020/08/Pistachio-Ice-Cream-5.jpg",
+      "price": "68",
       "id": "4"
     },
     {
@@ -28,19 +28,18 @@
     {
       "flavour": "Mango",
       "type": "Fruit",
-      "price": "57",
       "description": "Тропічне мангове морозиво",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_vhfJXSiJGbgBWZu9vmlbqeW1UQwyFX1W3g&s",
+      "price": "577",
       "id": "6"
     },
     {
-      "id": "7",
       "flavour": "Blueberry",
       "type": "Fruit",
-      "callory": "98",
-      "price": 50,
       "description": "Ягідне морозиво з чорниці",
-      "image": "https://flavormosaic.com/wp-content/uploads/2025/06/Blueberry-Cheesecake-Ice-Cream-29-2.jpg"
+      "image": "https://flavormosaic.com/wp-content/uploads/2025/06/Blueberry-Cheesecake-Ice-Cream-29-2.jpg",
+      "price": "500",
+      "id": "7"
     },
     {
       "id": "8",
@@ -54,27 +53,10 @@
     {
       "flavour": "Cookie",
       "type": "Dessert",
-      "price": "60",
       "description": "Морозиво з шматочками печива",
       "image": "https://celebratingsweets.com/wp-content/uploads/2023/04/Cookie-Dough-Ice-Cream-9.jpg",
+      "price": "200",
       "id": "9"
-    },
-    {
-      "id": "10",
-      "flavour": "Lemon",
-      "type": "Sorbet",
-      "callory": "85",
-      "price": 45,
-      "description": "Легкий лимонний сорбет",
-      "image": "https://www.yourhomebasedmom.com/wp-content/uploads/2013/07/lemon-ice-cream-4.jpg"
-    },
-    {
-      "flavour": "Watermelon",
-      "type": "Good taste",
-      "description": "Super peper cool",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCR2eBUKsjuLAl0oqz7YvkZJFU1C3znejG4g&s",
-      "price": "122",
-      "id": "AqLHDZr"
     }
   ]
 }

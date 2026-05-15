@@ -1,4 +1,4 @@
-export const updateIce = (id, iceData) => {
+export const updateIce = async (id, iceData) => {
   const options = {
     method: "PUT",
     body: JSON.stringify(iceData),
@@ -6,7 +6,20 @@ export const updateIce = (id, iceData) => {
       "Content-Type": "application/json; charset=UTF-8",
     },
   };
-  return fetch(`http://localhost:3000/icecream/${id}`, options).then((res) =>
-    res.json(),
-  );
+  try {
+    const res = await fetch(`http://localhost:3000/icecream/${id}`, options);
+    if (!res.ok) {
+      throw new Error("Error");
+    }
+    const data = await res.json();
+    if (!data) {
+      throw new Error("No datas");
+    }
+    return data;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+  // .then((res) =>
+  // res.json(),
 };

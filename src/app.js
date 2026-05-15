@@ -21,7 +21,13 @@ openBtn.addEventListener("click", () => {
   openModal();
 });
 
-formRef.addEventListener("submit", (evt) => {
+async function init() {
+  const res = await getIce();
+  creatIceMarcap(res);
+}
+init();
+
+formRef.addEventListener("submit", async (evt) => {
   evt.preventDefault();
 
   const name = evt.currentTarget.elements.name.value;
@@ -38,22 +44,26 @@ formRef.addEventListener("submit", (evt) => {
     price: price,
   };
   if (currentId === null) {
-    postIce(iceData)
-      .then(getIce)
-      .then((res) => creatIceMarcap(res));
+    await postIce(iceData);
+    const res = await getIce();
+    creatIceMarcap(res);
+    // .then(getIce)
+    // .then((res) => creatIceMarcap(res));
 
     evt.currentTarget.reset();
     closeModal();
     return;
   }
-  updateIce(currentId, iceData)
-    .then(getIce)
-    .then((res) => creatIceMarcap(res));
-  evt.currentTarget.reset();
+  await updateIce(currentId, iceData);
+  const res = await getIce();
+
+  creatIceMarcap(res);
+  // .then(getIce)
+  // .then((res) => creatIceMarcap(res));
+  formRef.reset();
   closeModal();
 });
-
-getIce().then((res) => creatIceMarcap(res));
+// getIce().then((res) => creatIceMarcap(res));
 
 function creatIceMarcap(arr) {
   const item = arr
@@ -72,7 +82,7 @@ function creatIceMarcap(arr) {
   listRef.innerHTML = item;
 }
 
-listRef.addEventListener("click", (e) => {
+listRef.addEventListener("click", async (e) => {
   const action = e.target.dataset.action;
   if (!action) {
     return;
@@ -80,14 +90,15 @@ listRef.addEventListener("click", (e) => {
   const li = e.target.closest("li");
   const id = li.id;
   if (action === "delet") {
-    delIce(id)
-      .then(getIce)
-      .then((res) => creatIceMarcap(res));
+    delIce(id);
+    const res = await getIce();
+    creatIceMarcap(res);
+    // .then(getIce)
+    // .then((res) => creatIceMarcap(res));
   }
   if (action === "edit") {
     openModal();
     currentId = id;
-    console.log(currentId);
     formRef.elements.name.value = li.querySelector(".title").textContent;
     formRef.elements.type.value = li.querySelector(".text").textContent;
     formRef.elements.desk.value = li.querySelector(".desk").textContent;
@@ -95,3 +106,4 @@ listRef.addEventListener("click", (e) => {
     formRef.elements.price.value = li.querySelector(".price").textContent;
   }
 });
+init();
